@@ -8,17 +8,20 @@ export const GetNews = ({ url }) => {
 	const [news, setNews] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	const newsData = [];
-
 	const getNews = async () => {
 		setLoading(true);
-		const resp = await axios.get(url);
-		// console.log(resp.data);
-		const data = resp.data;
-		newsData.push(...data);
-		setNews(newsData);
+		const newsData = [];
+		try {
+			const resp = await axios.get(url);
+			// console.log(resp.data);
+			const data = resp.data;
+			newsData.push(...data);
+			setNews(newsData);
 
-		setLoading(false);
+			setLoading(false);
+		} catch (err) {
+			console.log(err);
+		}
 	};
 
 	useEffect(() => {
