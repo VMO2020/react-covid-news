@@ -28,5 +28,5 @@
 
 //  strip units helper function
 @function num($input) {
-	@return $input/($input * 0 + 1);
+	@return $input / ($input * 0 + 1);
 }
