@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // FONT-SIZE RESPONSIVE - Mobile First -----------------------------------------------------
 // The calculation is:
 // minSize + (maxSize - minSize) * ( (100vw - minWidth) / ( maxWidth - minWidth) )
@@ -27,6 +29,7 @@
 }
 
 //  strip units helper function
+
 @function num($input) {
-	@return $input / ($input * 0 + 1);
+	@return math.div($input, $input * 0 + 1);
 }
