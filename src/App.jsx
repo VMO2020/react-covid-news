@@ -8,7 +8,9 @@ import './app.scss';
 import { GetNews } from './components/GetNews';
 
 function App() {
-	const [url, setUrl] = useState('/news');
+	const [url, setUrl] = useState(
+		'https://covid-19-wordnews-api.herokuapp.com/news'
+	);
 
 	return (
 		<div className='container'>
@@ -20,7 +22,9 @@ function App() {
 					<h3>{`NEWS LIST: ${monthName} ${day}, ${year}`}</h3>
 					<label>Source: </label>
 					<select onChange={(e) => setUrl(e.target.value)}>
-						<option value='/news'>ALL</option>
+						<option value='https://covid-19-wordnews-api.herokuapp.com/news'>
+							ALL
+						</option>
 						<option value='/news/nyt'>The New York Times</option>
 						<option value='/news/cityam'>City A.M.</option>
 						<option value='/news/guardian'>The Guardian</option>
