@@ -10,14 +10,13 @@ export const GetNews = ({ url }) => {
 
 	const getNews = async () => {
 		setLoading(true);
-		const newsData = [];
+		// const newsData = [];
 		try {
 			const resp = await axios.get(url);
-
+			console.log(resp.data);
 			const data = resp.data;
-			newsData.push(...data);
-			setNews(newsData);
-			console.log(newsData);
+			// newsData.push(...data);
+			setNews(data);
 
 			setLoading(false);
 		} catch (err) {
