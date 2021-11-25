@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,300&display=swap');
+@import '../styles/mixins';
+
+// RESPONSIVE (VIEWPORT SIZES)
+$minWidth: 350px !default;
+$maxWidth: 1200px !default;
+
+// Colors:
+$mainColor: rgb(0, 122, 255); // Apple System Light Blue
+$mainColorhover: rgb(0, 100, 200);
+$Light: rgb(247, 247, 247); // My White
+$backColor: rgb(230, 230, 230); // Background color
+$Dark: rgb(28, 28, 30); // My Black
+$MedLight: rgb(142, 142, 147); // My Gray: Silver
+$Danger: rgb(255, 59, 48); // Apple System Light Red
+
+.btn {
+	@include font-size(18px, 22px);
+	background-color: white;
+	padding: 0.2em 1em;
+	margin-right: 1em;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 1s ease;
+
+	&:hover {
+		border: 2px solid grey;
+	}
+
+	&:active {
+		background-color: grey;
+		transform: scale(0.8);
+		box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.5);
+	}
+}
