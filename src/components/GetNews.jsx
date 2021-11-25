@@ -7,6 +7,7 @@ import './getnews.scss';
 export const GetNews = ({ url }) => {
 	const [news, setNews] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const url2 = 'https://covid-19-wordnews-api.herokuapp.com/news';
 
 	useEffect(() => {
 		getNews();
@@ -17,7 +18,7 @@ export const GetNews = ({ url }) => {
 		setLoading(true);
 
 		try {
-			const resp = await axios.get(url);
+			const resp = await axios.get(url2);
 			console.log(resp.data);
 			const data = resp.data;
 
