@@ -12,7 +12,9 @@ export const GetNews = ({ url }) => {
 		setLoading(true);
 		const resp = await axios.get(url);
 		// console.log(resp.data);
-		setNews(resp.data);
+		const data = resp.data.slice();
+		data.push(resp.data);
+		setNews(data);
 		setLoading(false);
 	};
 
