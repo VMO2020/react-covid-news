@@ -8,14 +8,19 @@ export const GetNews = ({ url }) => {
 	const [news, setNews] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+	useEffect(() => {
+		getNews();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [url]);
+
 	const getNews = async () => {
 		setLoading(true);
-		// const newsData = [];
+
 		try {
 			const resp = await axios.get(url);
 			console.log(resp.data);
 			const data = resp.data;
-			// newsData.push(...data);
+
 			setNews(data);
 
 			setLoading(false);
@@ -23,11 +28,6 @@ export const GetNews = ({ url }) => {
 			console.log(err);
 		}
 	};
-
-	useEffect(() => {
-		getNews();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [url]);
 
 	return (
 		<div className='content-list'>
