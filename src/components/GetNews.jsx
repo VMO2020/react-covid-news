@@ -8,14 +8,15 @@ export const GetNews = ({ url }) => {
 	const [news, setNews] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+	const newsData = [];
+
 	const getNews = async () => {
 		setLoading(true);
 		const resp = await axios.get(url);
 		// console.log(resp.data);
 		const data = resp.data;
-		const newData = data.slice();
-
-		setNews(newData);
+		newsData.push(...data);
+		setNews(newsData);
 
 		setLoading(false);
 	};
