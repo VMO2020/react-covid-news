@@ -13,10 +13,11 @@ export const GetNews = ({ url }) => {
 		const newsData = [];
 		try {
 			const resp = await axios.get(url);
-			console.log(resp.data);
+
 			const data = resp.data;
 			newsData.push(...data);
 			setNews(newsData);
+			console.log(newsData);
 
 			setLoading(false);
 		} catch (err) {
