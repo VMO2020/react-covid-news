@@ -17,7 +17,9 @@ export const GetNews = ({ url }) => {
 		setLoading(true);
 
 		try {
-			const resp = await axios.get(url);
+			const resp = await axios.get(
+				'https://covid-19-wordnews-api.herokuapp.com/news'
+			);
 			console.log(resp.data);
 			const data = resp.data;
 
