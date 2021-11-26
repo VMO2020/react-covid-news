@@ -24,7 +24,7 @@ function App() {
 						<option value='/news/nyt'>The New York Times</option>
 						<option value='/news/cityam'>City A.M.</option>
 						<option value='/news/guardian'>The Guardian</option>
-						<option value='news/telegraph'>The Telegraph</option>
+						<option value='/news/telegraph'>The Telegraph</option>
 						<option value='/news/latimes'>Los Angeles Times</option>
 						<option value='/news/bbc'>BBC</option>
 						<option value='/news/es'>Evening Standard</option>
