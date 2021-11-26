@@ -8,8 +8,6 @@ export const GetNews = ({ url }) => {
 	const [news, setNews] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	const url2 = 'https://covid-19-wordnews-api.herokuapp.com';
-
 	useEffect(() => {
 		getNews();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,7 +17,7 @@ export const GetNews = ({ url }) => {
 		setLoading(true);
 
 		try {
-			const resp = await axios.get(url2);
+			const resp = await axios.get(url);
 			console.log(resp.data);
 			const data = resp.data;
 
