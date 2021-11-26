@@ -4,7 +4,7 @@ module.exports = function (app) {
 	app.use(
 		'/news',
 		createProxyMiddleware({
-			target: '*',
+			target: 'https://covid-19-wordnews-api.herokuapp.com',
 			changeOrigin: true,
 		})
 	);
