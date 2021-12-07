@@ -70,7 +70,7 @@ body {
 				label,
 				select {
 					@include font-size(18px, 24px);
-					margin: 0.5em 0 1em 0;
+					margin: 0.5em 0 0.2em 0;
 				}
 				select {
 					cursor: pointer;
@@ -81,8 +81,15 @@ body {
 				}
 
 				h3 {
+					@include font-size(22px, 30px);
 					text-align: center;
 					margin-top: 0.5em;
+				}
+
+				h3.url-list {
+					@include font-size(16px, 22px);
+					margin-bottom: 0.5em;
+					font-weight: 500;
 				}
 			}
 		}

@@ -20,7 +20,8 @@ function App() {
 					<h3>{`NEWS LIST: ${monthName} ${day}, ${year}`}</h3>
 					<label>Source: </label>
 					<select onChange={(e) => setUrl(e.target.value)}>
-						<option value='/news'>ALL</option>
+						<option value='/news'>Select</option>
+						<option value='/news'>All</option>
 						<option value='/news/nyt'>The New York Times</option>
 						<option value='/news/cityam'>City A.M.</option>
 						<option value='/news/guardian'>The Guardian</option>
@@ -35,7 +36,9 @@ function App() {
 						<option value='/news/smh'>The Sydney Morning Herald</option>
 						<option value='/news/ut'>USA TODAY</option>
 					</select>
+					<h3 className='url-list'>{`URL endpoint: ${url}`}</h3>
 				</div>
+				<hr />
 				<div className='content'>
 					<GetNews url={url} />
 				</div>
